@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Sunshine</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="holder_day_forecast">Today</string>
+    <string name="holder_weather_forecast">Weather</string>
+    <string name="Refresh">Refresh</string>
 </resources>

@@ -1,0 +1,29 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+    <EditTextPreference
+        android:key="@string/location"
+        android:title="@string/location"
+        android:defaultValue="33035"
+        android:selectAllOnFocus="true"
+        android:inputType="textCapWords"
+        android:capitalize="words"
+        android:singleLine="true"
+        android:maxLines="1" />
+
+    <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
+         dismiss it. -->
+    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+    <ListPreference
+        android:key="@string/units"
+        android:title="@string/units"
+        android:defaultValue="0"
+        android:entries="@array/Units_settings"
+        android:entryValues="@array/Units_settings"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null" />
+
+</PreferenceScreen>

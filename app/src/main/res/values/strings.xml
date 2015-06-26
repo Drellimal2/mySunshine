@@ -6,4 +6,11 @@
     <string name="holder_day_forecast">Today</string>
     <string name="holder_weather_forecast">Weather</string>
     <string name="Refresh">Refresh</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="location">Location</string>
+    <string name="units">Units</string>
+    <string-array name="Units_settings">
+        <item>metric</item>
+        <item>imperial</item>
+    </string-array>
 </resources>

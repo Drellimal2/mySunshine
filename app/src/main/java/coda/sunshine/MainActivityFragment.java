@@ -1,9 +1,11 @@
 package coda.sunshine;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -83,9 +85,12 @@ public class MainActivityFragment extends Fragment {
             return true;
         }
         else if (id == R.id.action_refresh) {
-            Toast.makeText(getActivity(), "Refreshing, AHHH!!", Toast.LENGTH_LONG).show();
             FetchWeatherTask fetchWeatherTask = new FetchWeatherTask();
-            fetchWeatherTask.execute("33035");
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            String location = preferences.getString(getString(R.string.location), "33035");
+            Toast.makeText(getActivity(), ""+ location, Toast.LENGTH_LONG).show();
+
+            fetchWeatherTask.execute(location);
             return true;
         }
 

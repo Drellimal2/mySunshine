@@ -20,7 +20,7 @@
     <ListPreference
         android:key="@string/units"
         android:title="@string/units"
-        android:defaultValue="0"
+        android:defaultValue="@string/Units_default"
         android:entries="@array/Units_settings"
         android:entryValues="@array/Units_settings"
         android:negativeButtonText="@null"

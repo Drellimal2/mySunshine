@@ -13,4 +13,7 @@
         <item>metric</item>
         <item>imperial</item>
     </string-array>
+    <string name="Units_default">
+        metric
+    </string>
 </resources>

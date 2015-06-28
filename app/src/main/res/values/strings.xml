@@ -10,8 +10,8 @@
     <string name="location">Location</string>
     <string name="units">Units</string>
     <string-array name="Units_settings">
-        <item>metric</item>
-        <item>imperial</item>
+        <item>Metric</item>
+        <item>Imperial</item>
     </string-array>
     <string name="Units_default">
         metric

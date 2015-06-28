@@ -85,18 +85,22 @@ public class MainActivityFragment extends Fragment {
             return true;
         }
         else if (id == R.id.action_refresh) {
-            FetchWeatherTask fetchWeatherTask = new FetchWeatherTask();
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-            String location = preferences.getString(getString(R.string.location), "33035");
-            Toast.makeText(getActivity(), ""+ location, Toast.LENGTH_LONG).show();
-
-            fetchWeatherTask.execute(location);
+            updateWeather();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
+
+    public void updateWeather(){
+        FetchWeatherTask fetchWeatherTask = new FetchWeatherTask();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String location = preferences.getString(getString(R.string.location), "33035");
+        Toast.makeText(getActivity(), ""+ location, Toast.LENGTH_LONG).show();
+
+        fetchWeatherTask.execute(location);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -144,7 +148,11 @@ public class MainActivityFragment extends Fragment {
     }
 
 
-
+    @Override
+    public void onStart(){
+        updateWeather();
+        super.onStart();
+    }
     public class FetchWeatherTask extends AsyncTask<String, Void, ArrayList<WeatherItem>> {
         /* The date/time conversion code is going to be moved outside the asynctask later,
 * so for convenience we're breaking it out into its own method now.

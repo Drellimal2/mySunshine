@@ -1,11 +1,17 @@
 package coda.sunshine;
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.ShareActionProvider;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import static android.support.v4.view.MenuItemCompat.getActionProvider;
 
 
 /**
@@ -14,6 +20,17 @@ import android.widget.TextView;
 public class DetailActivityFragment extends Fragment {
 
     public DetailActivityFragment() {
+        setHasOptionsMenu(true);
+    }
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.details_fragment, menu);
+
+        MenuItem menuItem = menu.findItem(R.id.action_share);
+        ShareActionProvider shareActionProvider = (ShareActionProvider) getActionProvider(menuItem);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override

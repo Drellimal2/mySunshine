@@ -14,6 +14,8 @@
         <item>Imperial</item>
     </string-array>
     <string name="Units_default">
-        metric
+        Metric
     </string>
+    <string name="action_map">Map</string>
+    <string name="action_share">Share</string>
 </resources>

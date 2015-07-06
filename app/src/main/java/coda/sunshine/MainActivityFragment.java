@@ -1,9 +1,7 @@
 package coda.sunshine;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -79,9 +77,8 @@ public class MainActivityFragment extends Fragment {
 
 
     public void updateWeather(){
-        FetchWeatherTask fetchWeatherTask = new FetchWeatherTask();
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        String location = preferences.getString(getString(R.string.location), "33035");
+        FetchWeatherTask fetchWeatherTask = new FetchWeatherTask(getActivity());
+        String location = Utility.getPrefLocation(getActivity());
         Toast.makeText(getActivity(), ""+ location, Toast.LENGTH_LONG).show();
 
         fetchWeatherTask.execute(location);
